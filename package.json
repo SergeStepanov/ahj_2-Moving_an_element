@@ -1,0 +1,19 @@
+{
+  "name": "ahj_2-moving_an_element",
+  "version": "1.0.0",
+  "description": "ahj 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergeStepanov/ahj_2-Moving_an_element.git"
+  },
+  "author": "Serge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SergeStepanov/ahj_2-Moving_an_element/issues"
+  },
+  "homepage": "https://github.com/SergeStepanov/ahj_2-Moving_an_element#readme"
+}
