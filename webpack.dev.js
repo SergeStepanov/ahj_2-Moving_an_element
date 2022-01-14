@@ -7,7 +7,7 @@ module.exports = merge(common, {
   // Set the mode to development or production
   mode: "development",
   // Control how source maps are generated
-  devtool: "eval-source-map",
+  devtool: "inline-source-map",
 
   // Spin up a server for quick development
   devServer: {
