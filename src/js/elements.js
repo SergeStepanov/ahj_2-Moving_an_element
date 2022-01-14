@@ -1,8 +1,13 @@
+import RandomNumber from './random';
+import PositionGoblin from './positionGoblin';
+
 export default class Element {
   constructor() {
     this.board = 4;
     this.container = null;
     this.cells = [];
+    this.random = new RandomNumber(this.board);
+    this.posGoblin = null;
   }
 
   addBoard() {
@@ -21,34 +26,25 @@ export default class Element {
       this.container.insertAdjacentElement('beforeend', element);
     }
     this.cells = Array.from(this.container.children);
-    this.cells[this.random()].classList.add('goblin');
+    this.cells[this.random.randNumber()].classList.add('goblin');
   }
 
   interval() {
-    const randomNum = this.random();
-    const position = this.posGoblin();
-    let random2 = this.random();
-    console.log(`random === ${randomNum} = ${position} === position`);
+    this.posGoblin = new PositionGoblin(this.cells);
+    const randomNum = this.random.randNumber();
+    const position = this.posGoblin.posGoblin();
+    let random2 = this.random.randNumber();
 
     if (position !== randomNum) {
       this.cells[randomNum].classList.add('goblin');
       this.cells[position].classList.remove('goblin');
     } else {
       if (random2 === position) {
-        random2 = this.random();
+        random2 = this.random.randNumber();
       }
       this.cells[position].classList.remove('goblin');
 
       this.cells[random2].classList.add('goblin');
     }
-  }
-
-  random() {
-    return Math.floor(Math.random() * this.board);
-  }
-
-  posGoblin() {
-    const goblin = document.querySelector('.goblin');
-    return this.cells.indexOf(goblin);
   }
 }
